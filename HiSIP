@@ -1,0 +1,89 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<stdint.h>
+
+void callingfun();
+char data1 = 0xF0;
+char data2 = 0x0F;
+int main()
+{
+    
+    
+    callingfun();
+    callingfun();
+    callingfun();
+ //   callingfun();
+    callingfun();
+   
+}
+
+
+void callingfun()
+{
+    
+  static int rollingCountVal =0;
+    if(rollingCountVal<4)
+    {
+        if(((data1>>(uint8_t)4)&(uint8_t)1)!= ((data1>>(uint8_t)0)&(uint8_t)1))
+			{
+				if((data1>>(uint8_t)0)&(uint8_t)1)
+				{
+				    
+					printf("Turn on the TT 1\n");
+				}
+				
+				else
+				{
+					printf("Turn off the TT1\n");
+				}
+				
+			}
+			else
+			{
+					
+				printf("Safe State : Turn on the LED1\n");
+					
+			}
+			
+			if(((data2>>(uint8_t)4)&(uint8_t)1)!= ((data2>>(uint8_t)0)&(uint8_t)1))
+			{
+				if((data2>>(uint8_t)0)&(uint8_t)1)
+				{
+				    
+					printf("Turn on the TT2\n");
+				}
+				
+				else
+				{
+					printf("Turn off the TT2\n");
+				}
+				
+			}
+			else
+			{
+					
+				printf("Safe State : Turn on the LED2\n");
+					
+			}
+			 rollingCountVal++;
+    }
+    
+   
+ else
+ {
+     if(rollingCountVal >> 4)
+	 rollingCountVal = 0;
+    printf("Handle the intrigity count\n");
+ }  
+    
+    
+}
+
+
