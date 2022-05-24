@@ -1,7 +1,7 @@
 #include<iostream>
 #include<time.h>
 
-
+/*This file conatains a function to add dealy in seconds*/
 using namespace std;
 
 
